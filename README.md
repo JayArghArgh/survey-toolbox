@@ -1,5 +1,5 @@
 # Product Name
-> Short blurb about what your product does.
+> Coordinate mathematics and tools for surveyors and game-makers (currently) working in flat plane.
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]

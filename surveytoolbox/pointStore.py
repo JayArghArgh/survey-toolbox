@@ -1,4 +1,5 @@
 class PointStore:
+    # TODO implement local database storage options.
     def __init__(self):
         self.point_store = {}
         self.number_points = 0

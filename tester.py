@@ -1,9 +1,10 @@
 # from surveytoolbox import cbd
-
+from surveytoolbox import commonCalculations
 from surveytoolbox import surveyPoint
 from surveytoolbox import pointStore
 
 my_point_store = pointStore.PointStore()
+my_math = commonCalculations.CommonCalculations()
 
 point_1 = surveyPoint.SurveyPoint()
 point_2 = surveyPoint.SurveyPoint()
@@ -16,7 +17,12 @@ my_point_store.set_new_point(point_2)
 
 current_points = my_point_store.get_point_store()
 
-for x in current_points:
-    print(current_points[x].get_point_name())
-    print(current_points[x].get_status())
-    print(current_points[x].get_created_dtg())
+# print("fred", current_points["fred"])
+
+# for k, v in current_points.items():
+#     print(k)
+    # print(current_points[x].get_point_name())
+    # print(current_points[x].get_status())
+    # print(current_points[x].get_created_dtg())
+
+print(my_math.get_bearing_distance_from_coordinates(point_1.get_vertex(), point_2.get_vertex()))
