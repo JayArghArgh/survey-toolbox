@@ -5,9 +5,9 @@ STATUS_INACTIVE = False
 
 class SurveyPoint:
     """A Point object class"""
-    def __init__(self):
+    def __init__(self, point_name):
         self.oid = "uid4"
-        self.pointName = ""
+        self.pointName = point_name
         self.featureCode = ""
         self.vertex = {"e": 0.000, "n": 0.000, "el": 0.000}
         self.createdDTG = datetime.now()
