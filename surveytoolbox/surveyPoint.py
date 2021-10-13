@@ -1,6 +1,9 @@
 from datetime import datetime
 STATUS_ACTIVE = True
 STATUS_INACTIVE = False
+EASTING = "e"
+NORTHING = "n"
+ELEVATION = "el"
 
 
 class SurveyPoint:
@@ -9,7 +12,7 @@ class SurveyPoint:
         self.oid = "uid4"
         self.pointName = point_name
         self.featureCode = ""
-        self.vertex = {"e": 0.000, "n": 0.000, "el": 0.000}
+        self.vertex = {EASTING: 0.000, NORTHING: 0.000, ELEVATION: 0.000}
         self.createdDTG = datetime.now()
         self.status = STATUS_ACTIVE
         self.clonedFrom = False
@@ -31,7 +34,8 @@ class SurveyPoint:
 
     def set_vertex(self, vertex):
         # TODO Test validity.
-        self.vertex = vertex
+        for key, value in vertex.items():
+            self.vertex[key] = value
         return True
 
     def get_vertex(self):

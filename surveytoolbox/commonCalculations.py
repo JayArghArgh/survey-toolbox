@@ -1,5 +1,7 @@
 import math
 
+# TODO separate these so each method can be tweaked without tweaking the whole.
+
 
 # Do the math
 class CommonCalculations:
