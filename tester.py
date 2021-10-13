@@ -1,9 +1,14 @@
-# from surveytoolbox import cbd
-# from surveytoolbox import commonCalculations as commonCalculations
 from surveytoolbox import surveyPoint as surveyPoint
 from surveytoolbox import pointStore as pointStore
 from surveytoolbox import cbd as cbd
 from surveytoolbox import bdc as bdc
+from surveytoolbox import dec as dec
+
+dms_bg = 10.3045
+dec_bg = dec.to_decimal_degrees(dms_bg)
+
+print(dec_bg)
+
 
 # Declare some constants.
 EASTING = surveyPoint.EASTING
@@ -46,6 +51,6 @@ for k, v in current_points.items():
 # print(calcs.get_bearing_distance_from_coordinates(point_1.get_vertex(), point_2.get_vertex()))
 # TODO currently returning back-bearing.
 
-print("running cbd")
-target_loc = bdc.bearing_distance_from_coordinates(point_1.get_vertex(), point_2.get_vertex())
-print(f"Bearing: {target_loc[0]}\nDistance (2d): {target_loc[1]}\nDistance (3d): {target_loc[2]}")
+# print("running cbd")
+# target_loc = bdc.bearing_distance_from_coordinates(point_1.get_vertex(), point_2.get_vertex())
+# print(f"Bearing: {target_loc[0]}\nDistance (2d): {target_loc[1]}\nDistance (3d): {target_loc[2]}")
