@@ -1,8 +1,9 @@
-# from surveytoolbox import cbdl
-from surveytoolbox import commonCalculations as commonCalculations
+# from surveytoolbox import cbd
+# from surveytoolbox import commonCalculations as commonCalculations
 from surveytoolbox import surveyPoint as surveyPoint
 from surveytoolbox import pointStore as pointStore
 from surveytoolbox import cbd as cbd
+from surveytoolbox import bdc as bdc
 
 # Declare some constants.
 EASTING = surveyPoint.EASTING
@@ -13,7 +14,7 @@ ELEVATION = surveyPoint.ELEVATION
 pointStore = pointStore.PointStore()
 
 # Setup the calculations short name for ease of use.
-calcs = commonCalculations.CommonCalculations()
+# calcs = commonCalculations.CommonCalculations()
 
 # Create some points and add to point store.
 point_1 = surveyPoint.SurveyPoint("JRR")
@@ -42,8 +43,9 @@ for k, v in current_points.items():
     print(current_points[k].get_vertex())
 
 # Return bearing, distance 2d, distance 3d.
-print(calcs.get_bearing_distance_from_coordinates(point_1.get_vertex(), point_2.get_vertex()))
+# print(calcs.get_bearing_distance_from_coordinates(point_1.get_vertex(), point_2.get_vertex()))
 # TODO currently returning back-bearing.
 
 print("running cbd")
-cbd.run_cbd()
+target_loc = bdc.bearing_distance_from_coordinates(point_1.get_vertex(), point_2.get_vertex())
+print(f"Bearing: {target_loc[0]}\nDistance (2d): {target_loc[1]}\nDistance (3d): {target_loc[2]}")
