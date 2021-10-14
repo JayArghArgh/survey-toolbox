@@ -1,4 +1,7 @@
 import math
+EASTING = "e"
+NORTHING = "n"
+ELEVATION = "el"
 
 # TODO separate these so each method can be tweaked without tweaking the whole.
 
@@ -7,9 +10,9 @@ import math
 
 def get_deltas_from_coordinates(from_coordinates, to_coordinates):
     # difference between both sets of coordinates.
-    delta_e = from_coordinates["e"] - to_coordinates["e"]
-    delta_n = from_coordinates["n"] - to_coordinates["n"]
-    delta_el = from_coordinates["el"] - to_coordinates["el"]
+    delta_e = from_coordinates[EASTING] - to_coordinates[EASTING]
+    delta_n = from_coordinates[NORTHING] - to_coordinates[NORTHING]
+    delta_el = from_coordinates[ELEVATION] - to_coordinates[ELEVATION]
     return delta_e, delta_n, delta_el
 
 
@@ -25,9 +28,9 @@ def get_deltas_from_bearing_distance(bearing, distance_2d):
 def get_coordinates_from_deltas(from_coordinates, deltas):
     # Return new coords from deltas.
     return {
-        "e": from_coordinates["e"] + deltas[0],
-        "n": from_coordinates["n"] + deltas[1],
-        "el": from_coordinates["el"] + deltas[2]
+        "e": from_coordinates[EASTING] + deltas[0],
+        "n": from_coordinates[NORTHING] + deltas[1],
+        "el": from_coordinates[ELEVATION] + deltas[2]
     }
 
 

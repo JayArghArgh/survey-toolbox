@@ -1,9 +1,10 @@
 from datetime import datetime
+from .commonCalculations import EASTING as EASTING
+from .commonCalculations import NORTHING as NORTHING
+from .commonCalculations import ELEVATION as ELEVATION
+
 STATUS_ACTIVE = True
 STATUS_INACTIVE = False
-EASTING = "e"
-NORTHING = "n"
-ELEVATION = "el"
 
 
 class SurveyPoint:
