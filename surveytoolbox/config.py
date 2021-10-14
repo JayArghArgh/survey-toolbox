@@ -1,0 +1,3 @@
+EASTING = "e"
+NORTHING = "n"
+ELEVATION = "el"

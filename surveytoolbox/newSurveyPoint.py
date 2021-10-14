@@ -7,7 +7,7 @@ STATUS_ACTIVE = True
 STATUS_INACTIVE = False
 
 
-class SurveyPoint:
+class NewSurveyPoint:
     """A Point object class"""
     def __init__(self, point_name):
         self.oid = "uid4"

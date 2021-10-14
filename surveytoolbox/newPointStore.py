@@ -1,4 +1,4 @@
-class PointStore:
+class NewPointStore:
     # TODO implement local database storage options.
     def __init__(self):
         self.point_store = {}
