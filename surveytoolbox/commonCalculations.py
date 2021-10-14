@@ -24,9 +24,11 @@ def get_deltas_from_bearing_distance(bearing, distance_2d):
 
 def get_coordinates_from_deltas(from_coordinates, deltas):
     # Return new coords from deltas.
-    return [from_coordinates[0] + deltas[0],
-            from_coordinates[1] + deltas[1],
-            from_coordinates[2] + deltas[2]]
+    return {
+        "e": from_coordinates["e"] + deltas[0],
+        "n": from_coordinates["n"] + deltas[1],
+        "el": from_coordinates["el"] + deltas[2]
+    }
 
 
 def get_bearing_from_deltas(deltas):
