@@ -34,4 +34,6 @@ def get_bearing_from_deltas(deltas):
             bearing = 270 - abs(tan_results)
         else:
             bearing = 270 + abs(tan_results)
+
+        # TODO return as dictionary.
     return bearing

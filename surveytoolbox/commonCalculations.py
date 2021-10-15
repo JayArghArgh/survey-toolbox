@@ -23,6 +23,7 @@ def get_deltas_from_bearing_distance(bearing, distance_2d):
     delta_n = distance_2d * (math.cos(math.radians(bearing)))
     delta_el = 0.0
     # TODO requires vertical bearing and distance for delta_el.
+    # TODO refactor o return values in dictionary.
     return delta_e, delta_n, delta_el
 
 

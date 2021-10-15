@@ -62,5 +62,3 @@ for k, v in current_points.items():
     print(
         f"{current_points[k].get_point_name()}: {current_points[k].get_vertex()}"
     )
-
-# TODO returning back-bearing for some reason.
