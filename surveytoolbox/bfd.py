@@ -1,43 +1,37 @@
 # bfd
-import math
+from math import degrees, atan
 
 
 def get_bearing_from_deltas(deltas):
-    # A great big switch statement to determine the correct direction.
+    # unpack the deltas
     delta_e = deltas[0]
     delta_n = deltas[1]
-    delta_el = deltas[2]
-    bearing = 0.0
+    # delta_el = deltas[2]
 
-    if delta_e == 0 and delta_n > 0:
-        bearing = 0.0
-    elif delta_e == 0 and delta_n < 0:
-        bearing = 180.0
-    elif delta_e > 0 and delta_n == 0:
+    # Check for E W, N S movement.
+    if delta_n == 0:
         bearing = 90.0
-    elif delta_e < 0 and delta_n == 0:
-        bearing = 270.0
+        if delta_e < 0:
+            bearing = 270.0
 
-    # Check for 45 degree variations.
-    elif abs(delta_e) == abs(delta_n):
+    elif delta_e == 0:
+        bearing = 0.0
+        if delta_n < 0:
+            bearing = 180.0
+
+    # Determine ordinary bearing.
+    else:
+        tan_results = delta_n / delta_e
+        tan_results = atan(tan_results)
+        tan_results = degrees(tan_results)
+
         if delta_e > 0 and delta_n > 0:
-            bearing = 45.0
-        elif delta_e > 0 > delta_n:
-            bearing = 135.0
+            bearing = 90 - abs(tan_results)
+        # TODO refactor, chain.
+        elif delta_e > 0 and delta_n < 0:
+            bearing = 90 + abs(tan_results)
         elif delta_e < 0 and delta_n < 0:
-            bearing = 225.0
-        elif delta_n > 0 > delta_e:
-            bearing = 315.0
-
-    # Compute it out.
-    elif delta_e > 0:
-        bearing = math.degrees(math.atan(delta_e / delta_n))
-    elif delta_e < 0 and delta_n < 0:
-        bearing = math.degrees(math.atan(delta_e / delta_n)) + 180
-    elif delta_n > 0 > delta_e:
-        bearing = math.degrees(math.atan(delta_e / delta_n)) + 360
-
-    # The final piece.
-    if bearing < 0:
-        bearing += 180
+            bearing = 270 - abs(tan_results)
+        else:
+            bearing = 270 + abs(tan_results)
     return bearing

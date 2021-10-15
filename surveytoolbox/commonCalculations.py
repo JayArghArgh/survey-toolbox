@@ -10,9 +10,10 @@ ELEVATION = "el"
 
 def get_deltas_from_coordinates(from_coordinates, to_coordinates):
     # difference between both sets of coordinates.
-    delta_e = from_coordinates[EASTING] - to_coordinates[EASTING]
-    delta_n = from_coordinates[NORTHING] - to_coordinates[NORTHING]
-    delta_el = from_coordinates[ELEVATION] - to_coordinates[ELEVATION]
+    delta_e = to_coordinates[EASTING] - from_coordinates[EASTING]
+    delta_n = to_coordinates[NORTHING] - from_coordinates[NORTHING]
+    delta_el = to_coordinates[ELEVATION] - from_coordinates[ELEVATION]
+    print (delta_e, delta_n, delta_el)
     return delta_e, delta_n, delta_el
 
 

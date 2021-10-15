@@ -2,8 +2,8 @@
 from surveytoolbox.config import EASTING, NORTHING, ELEVATION
 
 # Import functions.
-from surveytoolbox.newPointStore import NewPointStore
-from surveytoolbox.newSurveyPoint import NewSurveyPoint
+from surveytoolbox.PointStore import NewPointStore
+from surveytoolbox.SurveyPoint import NewSurveyPoint
 
 from surveytoolbox.bdc import bearing_distance_from_coordinates
 from surveytoolbox.cbd import coordinates_from_bearing_distance
