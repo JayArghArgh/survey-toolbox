@@ -1,5 +1,6 @@
 # bfd
 from math import degrees, atan
+from .config import BEARING
 
 
 def get_bearing_from_deltas(deltas):
@@ -36,4 +37,4 @@ def get_bearing_from_deltas(deltas):
             bearing = 270 + abs(tan_results)
 
         # TODO return as dictionary.
-    return bearing
+    return {BEARING: bearing}

@@ -1,5 +1,5 @@
 # Declare some constants.
-from surveytoolbox.config import EASTING, NORTHING, ELEVATION
+from surveytoolbox.config import EASTING, NORTHING, ELEVATION, BEARING
 
 # Import functions
 
@@ -21,7 +21,7 @@ point_1.set_vertex(
 point_2.set_vertex(
     {
         EASTING: 200,
-        NORTHING: 100,
+        NORTHING: 300,
         ELEVATION: 30
     }
 )
@@ -30,8 +30,8 @@ point_2.set_vertex(
 # Calculate and print the bearing and distance between two points.
 target_loc = bearing_distance_from_coordinates(point_1.get_vertex(), point_2.get_vertex())
 print(
-    f"Bearing: {format_as_dms(target_loc[0])}"
-    f"\nDistance (2d): {target_loc[1]}"
-    # f"\nDistance (3d): {target_loc[2]}"
+    target_loc
 )
+
+print(format_as_dms(target_loc[BEARING]))
 

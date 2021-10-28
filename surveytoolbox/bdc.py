@@ -15,4 +15,5 @@ def bearing_distance_from_coordinates(from_coordinates, to_coordinates):
     dist_2d = get_distance_2d_from_deltas(deltas)
     dist_3d = get_distance_3d_from_deltas(deltas)
 
-    return [bearing, dist_2d, dist_3d]
+    # Merge the dictionaries and return.
+    return {**bearing, **dist_2d, **dist_3d}
