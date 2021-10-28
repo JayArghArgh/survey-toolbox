@@ -1,4 +1,3 @@
-# Declare some constants.
 from surveytoolbox.config import EASTING, NORTHING, ELEVATION, BEARING
 
 # Import functions
