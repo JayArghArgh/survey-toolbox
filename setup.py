@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="survey-toolbox",
-    version="0.0.1",
+    version="0.0.3",
     description="Add surveyor mathematics easily to your projects.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -25,7 +25,7 @@ setup(
     ],
     packages=["surveytoolbox"],
     include_package_data=True,
-    install_requires=["math"],
+    # install_requires=["python-math"],
     # entry_points={
     #     "console_scripts": [
     #         "realpython=reader.__main__:main",
